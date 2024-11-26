@@ -1,0 +1,26 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?countryLabel (GROUP_CONCAT(UCASE(?languageLabel); separator="|") AS ?languageLabels)
+WHERE {
+  ?country a dbo:Country .
+  ?country rdfs:label ?countryLabel .
+  FILTER (lang(?countryLabel) = "en") .
+  FILTER (strstarts(?countryLabel, "A")) .
+
+  { 
+    ?country dct:subject dbc:Countries_in_Europe . 
+  } 
+  UNION 
+  { 
+    ?country dct:subject dbc:Countries_in_North_America . 
+  }
+
+  OPTIONAL {
+    ?country dbo:officialLanguage ?language .
+    ?language rdfs:label ?languageLabel .
+    FILTER (lang(?languageLabel) = "en")
+  }
+}
+ORDER BY ?countryLabel

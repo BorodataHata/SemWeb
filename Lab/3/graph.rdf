@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ex="http://example.org/"
+   xmlns:foaf="http://xmlns.com/foaf/0.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://example.org/Emma">
+    <foaf:name>Emma</foaf:name>
+    <foaf:based_near>Carrer de la Guardia Civil 20, 46020 Valencia, Spain</foaf:based_near>
+    <ex:degree rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Master of Chemistry</ex:degree>
+    <ex:hasInterest>Cycling, Music, Travel</ex:hasInterest>
+    <ex:visited rdf:resource="http://example.org/Portugal"/>
+    <ex:visited rdf:resource="http://example.org/Italy"/>
+    <ex:visited rdf:resource="http://example.org/France"/>
+    <ex:visited rdf:resource="http://example.org/Germany"/>
+    <ex:visited rdf:resource="http://example.org/Denmark"/>
+    <ex:visited rdf:resource="http://example.org/Sweden"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Cade">
+    <foaf:name>Cade</foaf:name>
+    <foaf:based_near>1516 Henry Street, Berkeley, California 94709, USA</foaf:based_near>
+    <ex:degree rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bachelor of Biology</ex:degree>
+    <ex:hasInterest>Birds, Ecology, Environment, Photography, Travel</ex:hasInterest>
+    <ex:visited rdf:resource="http://example.org/Canada"/>
+    <ex:visited rdf:resource="http://example.org/France"/>
+    <ex:knows rdf:resource="http://example.org/Emma"/>
+  </rdf:Description>
+</rdf:RDF>

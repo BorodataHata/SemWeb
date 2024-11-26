@@ -1,0 +1,30 @@
+@prefix ex: <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:Cade ex:degree "Bachelor of Biology"^^xsd:string ;
+    ex:graduationYear "2011"^^xsd:gYear ;
+    ex:hasInterest "Birds, Ecology, Environment, Photography, Travel" ;
+    ex:metDate "2014-08-01"^^xsd:date ;
+    ex:metPlace "Paris" ;
+    ex:metWith ex:Emma ;
+    ex:visited ex:Canada,
+        ex:France,
+        ex:Germany ;
+    foaf:based_near "1516 Henry Street, Berkeley, California 94709, USA" ;
+    foaf:name "Cade" .
+
+ex:Emma ex:age 36 ;
+    ex:areaOfExpertise "Waste Management, Toxic Waste, Air Pollution" ;
+    ex:degree "Master of Chemistry"^^xsd:string ;
+    ex:graduationYear "2015"^^xsd:gYear ;
+    ex:hasInterest "Cycling, Music, Travel" ;
+    ex:visited ex:Denmark,
+        ex:France,
+        ex:Germany,
+        ex:Italy,
+        ex:Portugal,
+        ex:Sweden ;
+    foaf:based_near "Carrer de la Guardia Civil 20, 46020 Valencia, Spain" ;
+    foaf:name "Emma" .
+

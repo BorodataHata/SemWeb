@@ -1,0 +1,13 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT COUNT(?person)
+WHERE {
+  ?person a dbo:Person .
+  ?person dbo:award dbr:Nobel_Prize_in_Physics .
+  ?person dbp:birthPlace ?birthPlace .
+  ?birthPlace dbo:country ?birthCountry .
+  ?person dbo:almaMater ?university .
+  ?university dbo:country ?universityCountry .
+  FILTER (?birthCountry != ?universityCountry)
+}

@@ -1,0 +1,11 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?name ?birthDate
+WHERE {
+  ?person a dbo:Person .
+  ?person dbp:name ?name .
+  ?person dbo:birthDate ?birthDate .
+  ?person dbo:award dbr:Nobel_Prize_in_Physics .
+}
+ORDER BY ?birthDate

@@ -1,0 +1,13 @@
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbp: <http://dbpedia.org/property/>
+
+SELECT ?name (COUNT(?person) AS ?count)
+WHERE {
+  ?person a dbo:Person .
+  ?person dbo:award dbr:Nobel_Prize_in_Physics .
+  ?person dbo:almaMater ?university .
+  ?university dbp:name ?name .
+}
+GROUP BY ?name
+ORDER BY DESC(?count)
+LIMIT 10
